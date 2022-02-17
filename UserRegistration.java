@@ -8,6 +8,7 @@ public class UserRegistration {
 	public static void main(String[] args) {
 			firstName();
 			lastName();
+			email();
 		}
 	
 	public static void firstName() {
@@ -35,6 +36,21 @@ public class UserRegistration {
 		}	
 		else {
 			System.out.println("Invalid last name");
+		}
+	}
+	
+	public static void email() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter email: ");
+		String email = sc.next();
+		boolean isEmail = Pattern.matches("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$", email);
+		
+		if(isEmail) {
+			System.out.println("Valid email");
+		}	
+		else {
+			System.out.println("Invalid email");
 		}
 	}
 }
