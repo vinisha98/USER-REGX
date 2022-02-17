@@ -9,6 +9,7 @@ public class UserRegistration {
 			firstName();
 			lastName();
 			email();
+			mobileNumber();
 		}
 	
 	public static void firstName() {
@@ -51,6 +52,21 @@ public class UserRegistration {
 		}	
 		else {
 			System.out.println("Invalid email");
+		}
+	}
+	
+	public static void mobileNumber() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter mobile number: ");
+		String number = sc.nextLine();
+		boolean isNumber = Pattern.matches("^[0-9]{2}\s[0-9]{10}$", number);
+		
+		if(isNumber) {
+			System.out.println("Valid mobile number");
+		}	
+		else {
+			System.out.println("Invalid mobile number");
 		}
 	}
 }
